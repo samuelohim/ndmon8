@@ -4,22 +4,16 @@ schema = mgo.Schema;
 
 const eventSchema = new schema({
 
-	name: String,
+	Pay: String,
 	slug: {
 		type: String,
 		unique: true
 	},
-	description: String
+	mid: String,
+	date: Date
+
 });
 
-eventSchema.pre('save', function(next){
-
-	this.slug = slugify(this.name);
-	next();
-})
-
-const eventModel = mgo.model('Event', eventSchema);
-module.exports = eventModel;
 function slugify(text) {
   return text.toString().toLowerCase()
     .replace(/\s+/g, '-')           // Replace spaces with -
@@ -28,3 +22,12 @@ function slugify(text) {
     .replace(/^-+/, '')             // Trim - from start of text
     .replace(/-+$/, '');            // Trim - from end of text
 }
+eventSchema.pre('save', function(next){
+
+	this.slug = slugify(this.Pay);
+	next();
+});
+
+const eventModel = mgo.model('feventz', eventSchema);  // 1st argument creates a new db table with the same name in mongoDB
+													  // One may rename db in Robomongo but must be reseeded after rename before use
+module.exports = eventModel;

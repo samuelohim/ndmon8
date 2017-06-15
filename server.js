@@ -1,18 +1,22 @@
-const eo = require('express');
-app = eo();
-const el = require('express-ejs-layouts');
+require('dotenv').config();
+	const express = require('express'),
+		bodyParser = require('body-parser'),
 
-app.use(el);
+		el = require('express-ejs-layouts'),
 
-app.use(eo.static(__dirname+'/public/css'));
-app.set('view engine', 'ejs');
-		mo = require('mongoose');
-port = process.env.PORT || 9000;
-		mo.connect('mongodb://satlibwanzai:1237890@ds157631.mlab.com:57631/otg')
-router = require('./app/router.js');
+		Book = require('./app/models/books');
+		mo = require('mongoose'); mo.connect(process.env.dburl);
+				eo = express();
+				eo.use(el);
+			//	eo.use(express.static(__dirname+'/views'));	// switch to Angular: (__dirname+'/public/client')
+				eo.use(express.static(__dirname+'/public/client')); 	// switch to Express: eo.use(express.static(__dirname+'/views'))
+				eo.set('view engine', 'ejs');
+						
+						port = process.env.PORT || 8500;
 
-app.use(router);
-
-app.listen(port, ()=>{
-	console.log(`Listening on port: ${port}`);
-});
+				router = require('./app/router.js');
+							eo.use(bodyParser.urlencoded({ extended: true }));	// For testing: eo.use(bodyParser.json());
+							eo.use(router);
+							eo.listen(port, ()=>{
+								console.log(`Listening on port: ${port}`);
+							});

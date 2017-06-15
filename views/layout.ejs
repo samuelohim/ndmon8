@@ -1,26 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+		<head>
+			<meta charset="UTF-8">
+			<title>OT Payment Gateway Admin Console</title>
+			<link rel = 'stylesheet' href = '../../bower_components/bootstrap/dist/css/bootstrap.css'></link>
+			<link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css">
+			<link rel = 'stylesheet' href = '../../bower_components/bootstrap/dist/css/bootstrap-theme.css'></link>
+			<link rel = 'stylesheet' href = '../../bower_components/bootstrap/dist/css/bootstrap-theme.css.map'></link>
+			<script src = '../../bower_components/jquery/dist/jquery.js'></script>
+			<script src = '../../bower_components/bootstrap/dist/js/bootstrap.js'></script>
+			<script src = '../../bower_components/datetimepicker/build/jquery.datetimepicker.full.js'></script>
+			<script src = '../../bower_components/datetimepicker/jquery.datetimepicker.js'></script>
+			<link rel = 'stylesheet' href = '../../bower_components/bootstrap/dist/css/bootstrap-footer.css'></link>
+			<link rel = 'stylesheet' href = '../../bower_components/datetimepicker/jquery.datetimepicker.css'></link>
+			<!-- Navigation tab was not working due to reversed dependency order -->
 
-	<link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css">
-</head>
-<body>
-	<header id="siteheader">
-		<div class="navbar navbar-inverse">
-			<div class="container">
-				<div class="navbar-header">
-					<a href="/" class="navbar-brand">Admin Console</a>
+		</head>
+		<body>
+			<header id="siteheader">
+				<div class="navbar navbar-inverse">
+					<div class="container">
+						<div class="navbar-header">
+							<a href="/" class="navbar-brand">OneTransact Admins Console</a>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-	</header>
-	<main id="sitemain">
-		<%- body %>
-	</main>
-	<footer id="sitefooter">Copyright &copy; 2017 OneTransact 2017</footer>
-</body>
-<!--------------------->
+			</header>
+			<main id="sitemain">
+				<%- body %>
 
+
+			</main>
+			<footer id="footer" class="clearfix">
+      <div id="footer-widgets">
+
+        <div class="container">
+
+        <div id="footer-wrapper">
+
+          <div class="row">
+            <div class="col-sm-6 col-md-2">
+              <div id="meta-3" class="widget widgetFooter widget_meta">
+              <h4 class="widgettitle">Importent Page :</h4>
+              <ul>
+    		  <li><a href="#"><i class="fa fa-home fa-fw"></i> Home</a></li>
+			  <li><a href="privacypolicy.php"><i class="fa fa-link"></i>   Privacy Policy</a></li>
+			  <li><a href="#"><i class="fa fa-envelope fa-fw"></i> Contact Us</a></li>
+             </ul>
+</div>      </div> <!-- end widget1 -->
+
+            <div class="col-sm-6 col-md-2">
+              		<div id="recent-posts-3" class="widget widgetFooter widget_recent_entries">
+                    <h4 class="widgettitle">Our social media :</h4>
+                    <ul>
+					<li>
+				     <a href="https://www.facebook.com/mr.dauod" target="_blank"><i class="fa fa-facebook"></i> Facebook</a>
+					</li>
+					<li>
+				      <a href="https://www.twitter.com/ayatquranCom" target="_blank"><i class="fa fa-twitter"></i> Twitter</a>
+					</li>
+					<li>
+				      <a href="http://www.youtube.com/user/sonsofye" target="_blank"><i class="fa fa-youtube"></i> Youtube</a>
+				   </li>
+				</ul>
+		</div>            </div> <!-- end widget1 -->
+
+            <div class="col-sm-6 col-md-4">
+              <div id="meta-4" class="widget widgetFooter widget_meta">
+              <h4 class="widgettitle">Subscribe :</h4>
+
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">E-mail :</span>
+                  <input class="form-control" placeholder="Your email .." type="text">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">Phone  :</span>
+                  <input class="form-control" placeholder="(852) " type="text">
+                   <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button">Subscribe !</button>
+                  </span>
+                </div>
+              </div>
+
+
+              </div>
+             </div> <!-- end widget1 -->
+
+            <div class="col-sm-6 col-md-4">
+              <div id="search-3" class="widget widgetFooter widget_search"><h3 class="widgettitle">Search in merchants :</h3>
+
+                <div class="form-group">
+                                <label class="control-label">Write what you want to search for it  :</label>
+                                <div class="input-group">
+                                  <span class="input-group-addon">Keyword :</span>
+                                  <input class="form-control" placeholder="Keyword for search ..." type="text">
+                                   <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="button">Search !</button>
+                                  </span>
+                                </div>
+                              </div>
+
+                </div>            </div> <!-- end widget1 -->
+
+          </div> <!-- end .row -->
+
+        </div> <!-- end #footer-wrapper -->
+
+        </div> <!-- end .container -->
+      </div> <!-- end #footer-widgets -->
+
+      <div id="sub-floor">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 copyright">Copyright OneTransact © 2017</div>
+          </div> <!-- end .row -->
+        </div>
+      </div>
+
+    </footer>
+</body>
 </html>
