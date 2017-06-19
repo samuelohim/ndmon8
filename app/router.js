@@ -25,4 +25,5 @@ module.exports = router;
 	router.get('/merchants/', merchantsControllers.listMerchants); // seedMerchants
 
 	router.get('/merchants/seed', merchantsControllers.seedMerchants); //
-	router.get('/merchants/ls', merchantsControllers.ls); // seedMerchants
+	router.get('/merchants/ls', merchantsControllers.ls); // merchantDetails
+	router.get('/merchants/:slug', merchantsControllers.merchantDetails); // 
