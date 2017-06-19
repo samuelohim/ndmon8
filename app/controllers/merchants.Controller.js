@@ -25,9 +25,6 @@ module.exports = {
 		},
 
 		seedMerchants: (req, res)=>{
-		
-
-	// 		res.send('ln 28');
 			const shangjia = [	{merchantName: 'Dr Reborn', mid: '78129392', createDate: '', accountBalance: '812934891234', tn: '2', numberofTransaction: '12', balanceAfterSettlement: '87123712'},
 				{merchantName: 'Benevolence', mid: '19823812', createDate: '', accountBalance: '812934891234', tn: '1', numberofTransaction: '23', balanceAfterSettlement: '87123712'},
 				{merchantName: 'E Corporation', mid: '82913135', createDate: '', accountBalance: '812934891234', tn: '3', numberofTransaction: '13', balanceAfterSettlement: '87123712'},
@@ -45,6 +42,17 @@ module.exports = {
 				if (err)
 					throw err;
 				res.render('pages/merchantDetails', {shj:shj});
+			});
+		},
+
+
+
+		deleteMerchant: (req, res)=>{
+			mM.remove({slug: req.params.slug}, (err)=>{
+				if (err)
+					throw err;
+
+				res.redirect('/merchants');
 			});
 		}
 };
