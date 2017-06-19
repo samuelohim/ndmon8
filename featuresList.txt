@@ -1,0 +1,59 @@
+Definitions:
+- TT = total transaction received from merchants
+- TFP2OT = transaction fee PSP charges OT
+- TFOT2M = transaction fee OT charges merchant (based on contract)
+- SFP2OT = settlement fee (PSP pay to OT)
+- SFOT2M = settlement fee (OT pay to merchant)
+
+Feature 1 - Display Account balance only after reconciliation
+verified/validated based on Feature 2.
+- categorize Account balance based on currencies
+- categorize Account balance based on PSP
+
+Feature 2 - Reconciliation:
+- Number of transaction (from Merchant to OT) against No. of transaction
+(from OT to PSP)
+- Number of transaction (from OT to PSP) against No. of transaction
+(from PSP to OT)
+- Number of transaction (from Merchant to OT) against No. of transaction
+(from OT to PSP)
+
+Feature 3 - Account balance calculation:
+Account balance (Available balance) = SFP2OT - SFOT2M - TFP2OT + TFOT2M
+
+Feature 4 - Display data on weekly calendar
+- Total transaction received from merchants
+- Refund amount
+- SFP2OT = settlement fee (PSP pay to OT)
+- SFOT2M = amount OT payable to merchants
+- Account balance (Available balance)
+
+Feature 5 - Messaging Centre
+- navigation system by  tabs
+      ~ broadcast: announcements from PSP
+      ~ compliance: 
+      ~ Alert:  warning messages from PSP
+- itemize messages based on date and time
+
+Feature 6 - Message Control mechanism
+- to allow Admin to amend alerts from PSP before sending it to merchants
+
+Feature 7 - Icons bar
+- Broadcast
+- compliance
+- alert
+
+Feature 8 - Settlement calculation based on T+n (Example: Date today is
+19 Nov)
+- T+0:   total amount received from merchant on the 19th Nov - TFOT2M
+(highly unlikely)
+- T+1:   total amount received from merchant on the 18th Nov - TFOT2M
+- T+2:   total amount received from merchant on the 17th Nov - TFOT2M
+- T+3:   total amount received from merchant on the 16th Nov - TFOT2M
+
+Feature 9 - Chart plotting
+- Display data with line chart and Pie chart
+
+Feature 10 - Geolocation
+- Display data based on the geographical location where transactions
+originate from

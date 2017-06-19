@@ -10,7 +10,7 @@ const eventSchema = new schema({
 		unique: true
 	},
 	mid: String,
-	date: Date
+	date: {type: Date, default: Date.now}
 
 });
 

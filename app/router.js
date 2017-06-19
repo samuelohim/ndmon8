@@ -6,6 +6,7 @@ module.exports = router;
 
 		eventsController = require('./controllers/events.controller');
 		booksController = require('./controllers/books.Controller');
+		merchantsControllers = require('./controllers/merchants.Controller');
 	router.get('/', mainController.showHome);
 	router.get('/events', eventsController.showEvent);
 	router.get('/events/seed', eventsController.seedEvents);
@@ -20,3 +21,8 @@ module.exports = router;
 	router.post('/events/:slug', eventsController.editCommit);
 	router.get('/library/books', booksController.showBooks);
 	router.get('/library/book/:id', booksController.showSingleBook);
+
+	router.get('/merchants/', merchantsControllers.listMerchants); // seedMerchants
+
+	router.get('/merchants/seed', merchantsControllers.seedMerchants); //
+	router.get('/merchants/ls', merchantsControllers.ls); // seedMerchants

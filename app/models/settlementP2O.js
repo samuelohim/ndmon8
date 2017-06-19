@@ -2,7 +2,7 @@ const mgo = require('mongoose');
 schema = mgo.Schema;
 const settleP2O_schema = new Schema({
 
-	Date: Date,
+	Date: {type: Date, default: Date.now},
 
 	BalanceBefore: String,
 	Amount: String,
@@ -29,4 +29,5 @@ function slugify(text) {
  	this.slug = slugify(this.Mid);
  });
 
-const settlementModel = mgo.model(''); // 
+const settlementModel = mgo.model('settlementdbName', settleP2O_schema); // 
+module.exports = settlementModel;
