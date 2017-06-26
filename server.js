@@ -9,8 +9,8 @@ require('dotenv').config();
 				eo = express();
 				eo.use(el);
 			//	eo.use(express.static(__dirname+'/views'));	// switch to Angular: (__dirname+'/public/client')
-				eo.use(express.static(__dirname+'/public/client')); 	// switch to Express: eo.use(express.static(__dirname+'/views'))
-				eo.set('view engine', 'ejs');
+				eo.use(express.static(__dirname+'/bower_components')); 	// switch to Express: eo.use(express.static(__dirname+'/views'))
+				eo.set('view engine', 'ejs');					// switch to Angular routes: eo.use(express.static(/public/client
 						
 						port = process.env.PORT || 8500;
 

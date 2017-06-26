@@ -7,6 +7,8 @@ module.exports = router;
 		eventsController = require('./controllers/events.controller');
 		booksController = require('./controllers/books.Controller');
 		merchantsControllers = require('./controllers/merchants.Controller');
+		 
+
 	router.get('/', mainController.showHome);
 	router.get('/events', eventsController.showEvent);
 	router.get('/events/seed', eventsController.seedEvents);

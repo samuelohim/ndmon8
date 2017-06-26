@@ -1,5 +1,169 @@
-<div class="jumbontron text-center">
-	<h1><a href="events"><button class="btn-danger">Login</button></a></h1>
-		<div class="container"><input type="text" id="datetimepicker"></div>
-		
-</div>
+<div class="container-fluid text-center">		
+	<div class="title_left">
+		<h3>Chart types<small>Examples</small></h3>
+	</div>
+		<div class="title_right">
+			<div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+				<div class="input-group"><input type="text" class="form-control" placeholder = "Search...">
+					<span class="input-group-btn">
+						<button class="btn btn-default" type = 'button'>Go!</button>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="clearfix"></div>
+
+		<div class="row">
+			<div class="col-md-3 col-sm-5 col-xs-12"  style = 'border: 1px solid grey; border-radius: 8px; margin-left: 88px; margin-bottom: 8px;'>
+				<div class="x_panel">
+	 				<div class="x_title">
+						<h5>Wallet 1</h5>
+						<ul class="nav navbar-right panel_toolbox">
+							<li style = 'float: left;'><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+							<li class="dropdown" style = 'float: left;'>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role = "button" aria-expanded = "false">
+									<i class="fa fa-wrench"></i>
+								</a>
+							
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="#">Setting 1</a></li>
+									<li><a href="#">Setting 2</a></li>
+								</ul>
+							</li>
+							<li style = 'float: left;'><a href="" class="close-link"><i class="fa fa-close"></i></a></li>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+						<div class="x_content">
+							<canvas id="myPieChart" style = "line-height: 1.471; box-sizing: border-box; display: inline-block; vertical-align: baseline"></canvas>
+						</div>
+				</div> <!-- x panel -->
+			</div><!-- </div> col-sm-2 -->
+ 		</div> <!-- row -->
+ 		<div class="row">
+	 		<div class="col-md-3 col-sm-5 col-xs-12" style = 'border: 1px solid grey; border-radius: 8px; margin-left: 88px; margin-bottom: 8px;'>
+	 			<div class="x_panel">
+	 				<div class="x_title">
+						<h5>Wallet 2</h5>
+	 					<ul class="nav navbar-right panel_toolbox">
+	 						<li style = 'float: left;'><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+	 						</li>
+	 						<li class="dropdown" style = 'float: left;'>
+	 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role = "button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+								
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="#">Setting 1</a></li>
+										<li><a href="#">Setting 2</a></li>
+									</ul>
+							</li>
+
+								<li style = 'float: left;'><a href="" class="close-link"><i class="fa fa-close"></i></a></li>
+	 					</ul>
+							<div class="clearfix"></div>
+	 				</div> <!-- x-title -->
+	 				
+						<div class="x_content">
+							<canvas id="myBarChart" style = "line-height: 1.471; box-sizing: border-box; display: inline-block; vertical-align: baseline"></canvas>
+						</div> <!-- x-content -->
+	 			</div> <!-- x-panel -->
+	 		</div> <!-- col-md -->
+		</div> <!-- row -->
+ </div> <!-- jumbotron -->
+
+
+<script>/*
+				var option = {
+			   		responsive: true,
+			    };*/
+			   
+				/*Chart.defaults.global.legend = {
+			     	enabled: false;
+			    };*/
+			    
+			    // Get the context of the canvas element we want to select
+			    var ctx = document.getElementById("myPieChart");
+
+			    var myPieChart = new Chart(ctx, {
+			    						type: 'pie',
+			    						data: {
+											    labels: ["Wechat", "Ali", "QuickPay", "BankPay", "HeePay", "Gpay", "HanaPay"],
+											    datasets: [{
+											            label: "My First dataset",
+											            fillColor: "rgba(220,220,220,0.2)",
+											            strokeColor: "rgba(220,220,220,1)",
+											            pointColor: "rgba(220,220,220,1)",
+											            pointStrokeColor: "#fff",
+											            pointHighlightFill: "#fff",
+											            pointHighlightStroke: "rgba(220,220,220,1)",
+														backgroundColor: "rgba(38, 188, 155, 0.31)",
+											        	borderColor: "rgba(38, 188, 155, 0.7)",
+											        	pointBorderColor: "rgba(38, 188, 155, 0.7)",
+											        	pointBackgroundColor: "rgba(38, 188, 155, 0.7)",
+											        	pointHoverBackgroundColor: "#fff",
+											        	pointHoverBorderColor: "rgba(220,220, 220, 1)",
+											        	pointBorderWidth: 1,
+											            data: [65, 59, 80, 81, 56, 55, 40]
+											        },
+
+											        {
+											        	label: "2nd Dataset",
+											            fillColor: "rgba(220,220,220,0.2)",
+											            strokeColor: "rgba(220,220,220,1)",
+											            pointColor: "rgba(220,220,220,1)",
+											            pointStrokeColor: "#fff",
+											            pointHighlightFill: "#fff",
+											            pointHighlightStroke: "rgba(220,220,220,1)",
+											        	backgroundColor: "rgba(3,88, 106, 0.3)",
+											        	borderColor: "rgba(3,88, 106, 0.7)",
+											        	pointBorderColor: "rgba(3,88, 106, 0.3)",
+											        	pointBackgroundColor: "rgba(3,88, 106, 0.3)",
+											        	pointHoverBackgroundColor: "#fff",
+											        	pointHoverBorderColor: "rgba(3,88, 106, 0.3)",
+											        	pointBorderWidth: 1,
+											        	data: [82, 23, 66, 9, 99, 4, 2]
+
+											        }]
+											   }
+			    					});
+
+// Get the context of the canvas element we want to select
+			    var ctxbc = document.getElementById("myBarChart");
+
+			    var myBarChart = new Chart(ctxbc, {
+			    						type: 'line',
+			    						data: {
+											    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+											    datasets: [{
+											            label: "My First dataset",
+											            fillColor: "rgba(220,220,220,0.2)",
+											            strokeColor: "rgba(220,220,220,1)",
+											            pointColor: "rgba(220,220,220,1)",
+											            pointStrokeColor: "#fff",
+											            pointHighlightFill: "#fff",
+											            pointHighlightStroke: "rgba(220,220,220,1)",
+														backgroundColor: "rgba(38, 188, 155, 0.31)",
+											        	borderColor: "rgba(38, 188, 155, 0.7)",
+											        	pointBorderColor: "rgba(38, 188, 155, 0.7)",
+											        	pointBackgroundColor: "rgba(38, 188, 155, 0.7)",
+											        	pointHoverBackgroundColor: "#fff",
+											        	pointHoverBorderColor: "rgba(220,220, 220, 1)",
+											        	pointBorderWidth: 1,
+											            data: [65, 59, 80, 81, 56, 55, 40]
+											        },
+
+											        {
+											        	label: "2nd Dataset",
+											        	backgroundColor: "rgba(3,88, 106, 0.3)",
+											        	borderColor: "rgba(3,88, 106, 0.7)",
+											        	pointBorderColor: "rgba(3,88, 106, 0.3)",
+											        	pointBackgroundColor: "rgba(3,88, 106, 0.3)",
+											        	pointHoverBackgroundColor: "#fff",
+											        	pointHoverBorderColor: "rgba(3,88, 106, 0.3)",
+											        	pointBorderWidth: 1,
+											        	data: [82, 23, 66, 9, 99, 4, 2]
+
+											        }]
+											   }
+			    					});			    
+</script>
