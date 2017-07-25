@@ -3,7 +3,22 @@
 		<h3>Chart types<small>Examples</small></h3>
 	</div>
 
+
+	<div class="container-fluid">
+	    <div class="row" style = 'float: left;'>
+	        <div class="col-md-2" id = 'sidebarSwitch'>
+	           	<a href="#menu-toggle" id="sideMenu">
+	           		<i class = 'fa fa-cube' 
+	           			style = 'position: fixed; margin-top: 50px; font-size: 58px; color: #18bc9c;'>
+	           		</i></a>
+
+	        </div>
+	    </div>
+	</div>
+
 		<div class="clearfix"></div>
+
+					            
 
 		<div class="row" style = 'height: 700px;  margin-top: 200px;'>
 			<div class="col-xs-12 col-sm-8 col-md-5 col-lg-2" style = 'border: 1px solid grey; border-radius: 8px; margin-left: 88px;   margin-bottom: 8px;'>
@@ -73,14 +88,18 @@
  </div> <!-- jumbotron -->
 
 
-<script>/*
-				var option = {
-			   		responsive: true,
-			    };*/
-			   
-				/*Chart.defaults.global.legend = {
-			     	enabled: false;
-			    };*/
+<script>
+			$(document).ready(function(){
+				$("#sideMenu").click(function(e) {
+			        e.preventDefault();
+			        $("#wrapper").toggleClass("toggled");
+				});
+
+				var sw = $(window).width();
+				sw = parseInt(sw)*0.02; // alert('ln 191 sw = '+sw);
+				// $('#sidebarSwitch').css('float', 'left');
+				$('#sidebarSwitch').css('left', sw+'px');
+			});
 			    
 			    // Get the context of the canvas element we want to select
 			    var ctx = document.getElementById("myPieChart");

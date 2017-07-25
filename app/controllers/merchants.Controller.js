@@ -1,7 +1,5 @@
 const mM = require('../models/merchantModel');
 
-
-
 module.exports = {
 
 		ls: (req, res) =>{
@@ -45,7 +43,34 @@ module.exports = {
 			});
 		},
 
+		xinjianShanghu: (req, res)=>{
+			res.render('pages/xinjianShanghu');
+		},
 
+		loe: (req, res)=>{
+			res.render('pages/loe', {shj:shj});
+		},
+
+		create: (req, res)=>{
+
+			// Create from model
+			const sj = new mM({
+				merchantName: req.body.merchantName,		// $Pay *must be same as name in Model* = $_POST['Pay'];
+				mid: req.body.mid,
+				accountBalance: req.body.accountBalance,
+				tn: req.body.tpn,
+				createDate: req.body.creationDate
+			//	mid: req.body.mid
+			//	req.body is the same as POSTfromWebForm or $_POST['']
+			});
+
+			 sj.save((err)=>{
+					if (err)
+						throw err;
+					res.redirect("/merchants");	// res.redirect(`/events/${sj.slug}`);
+				});
+
+		},
 
 		deleteMerchant: (req, res)=>{
 			mM.remove({slug: req.params.slug}, (err)=>{

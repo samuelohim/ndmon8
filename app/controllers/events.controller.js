@@ -13,7 +13,7 @@ const eM = require('../models/eventmodel');
 					res.send('Event not found');
 				}
 				else
-				res.render('pages/events', {shijian: shijian});
+				res.json({shijian: shijian});	// ('pages/events', {shijian: shijian});
 			});
 			// res.render('pages/events', {shijian: shijian});
 
@@ -43,7 +43,7 @@ const eM = require('../models/eventmodel');
 
 		showCreate: (req, res)=>{
 
-			res.render('pages/create');
+			res.render('pages/createEvents');
 		},
 
 

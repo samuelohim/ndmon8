@@ -10,11 +10,7 @@ const merchants_schema = new Schema({
 //	sfpcot: Number,
 //	sfotcm: Number,
 	tn: Number,
-	numberOfTransaction: Number,
-	currency1: String,
-	currency2: String,
-	currency3: String,
-	createDate: {type: Date, default: Date.now},
+	createDate: Date,
 	slug: {
 		type: String,
 		unique: true

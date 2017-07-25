@@ -24,9 +24,12 @@ module.exports = router;
 	router.get('/library/books', booksController.showBooks);
 	router.get('/library/book/:id', booksController.showSingleBook);
 
+	
+	router.get('/merchants/new', merchantsControllers.xinjianShanghu); //  deleteMerchant
 	router.get('/merchants/', merchantsControllers.listMerchants); // seedMerchants
-
 	router.get('/merchants/seed', merchantsControllers.seedMerchants); //
 	router.get('/merchants/ls', merchantsControllers.ls); // merchantDetails
 	router.get('/merchants/:slug', merchantsControllers.merchantDetails); //  deleteMerchant
 	router.get('/merchants/:slug/delete', merchantsControllers.deleteMerchant); //  deleteMerchant
+	router.get('/merchants/loe', merchantsControllers.loe); //  deleteMerchant
+	router.post('/merchants/create', merchantsControllers.create); //  deleteMerchant

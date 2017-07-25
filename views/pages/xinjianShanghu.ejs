@@ -1,0 +1,128 @@
+
+
+<div class="container">
+		 
+	<div class="row" style = 'margin-top: 150px;'>
+		<div class="col-m-3">
+				<ul class="nav nav-tabs nav-justified">
+					<li><a href="#hometab" data-toggle="tab">Home</a></li>
+					<li class = 'active'><a href="#merchanttab" data-toggle="tab">Merchant</a></li>
+					<li><a href="#agenttab" data-toggle="tab">Agents</a></li>
+					<li><a href="#indiaTab" data-toggle="tab">links</a></li>
+					<li><a href="#" data-toggle="tab">links</a></li>
+					<li class="dropdown">
+						<a href="" data-toggle="dropdown" class="dropdown-toggle">Currency
+							<b class="caret"></b>
+						</a>
+
+						<ul class = 'dropdown-menu'>
+							<li><a href="#indiaTab" data-toggle="tab">CNY</a></li>
+							<li><a href="#japanTab" data-toggle="tab">HKD</a></li>
+						</ul>
+					</li>
+				</ul>
+
+				
+		</div>
+	</div>	<!-- Row -->		
+		<div class="tab-content">
+					<div id="hometab" class="tab-pane">
+						<h3>Merchants</h3>
+						<p>Listing</p>
+					</div>
+					<div id="merchanttab" class="tab-pane active"><Br><Br>
+						<div class="col-md-3">
+							<form action="/merchants/create" method = 'POST'>
+							
+										<table class="table table-bordered table-hover table-striped">
+											<thead>
+												<tr>
+													<th colspan = '2'>Add Merchant</th>
+												</tr>
+											</thead>
+
+											<tbody>
+												<tr>
+													<td class="form-group">Merchant Name:</td>
+													<td><input class="form-control" type="text" name = 'merchantName'></td>
+												</tr>
+												
+
+												<tr>
+													<td><div class="form-group">Mid:</div></td>
+													<td><input class="form-control" type="text" name = 'mid'></td>
+												</tr>
+
+												<tr>
+													<td><div class="form-group">Account Balance:</div></td>
+													<td><input class="form-control" type="text" name = 'accountBalance'></td>
+												</tr>
+												
+
+												<tr>
+													<td><div class="form-group">T + n:</div></td>
+													<td><input class = 'form-control' type="text" name = 'tpn'></td>
+												</tr>
+
+												<tr>
+													<td><div class="form-group">Creation date:</div></td>
+													<td>
+														<div class="container">
+															<input class = 'form-control' name = 'creationDate' type="text" id="datetimepicker" />
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td colspan = '2'>
+														<div class="form-group">
+															<button type = 'submit' class = 'btn btn-lg btn-warning'>Add New Merchant</button>
+														</div>
+													</td>
+												</tr>		
+											</tbody>
+										</table>
+
+
+									</form>								
+							</div>
+					</div>
+					<div id="agenttab" class="tab-pane">
+						<h3>Agent Pages</h3>
+						<p>Agent Content</p>
+					</div>
+					<div id="indiaTab" class="tab-pane">
+						<h3>India Pages</h3>
+						<p>merchant Content</p>
+					</div>
+					<div id="japanTab" class="tab-pane">
+						<h3>Japan Pages</h3>
+						<p>Agent Content</p>
+					</div>
+				</div>
+</div>
+
+
+
+<div id = 'fstAlert' class="alert alert-danger collapse" style = 'width: 30%;'>
+	<a href="" class="close" id = 'linkClose'>&times;</a>
+
+	<strong>Error!</strong>Do not click this field.
+
+</div>
+<script type = 'text/javascript'>
+	$(document).ready(function(){
+		$('.pay').click(function(){
+			$('#fstAlert').show('fade');
+
+			setTimeout(function(){
+				$('#fstAlert').hide('fade');
+			}, 2000);		
+		});
+
+		$('#linkClose').click(function(){
+			$('#fstAlert').hide('fade');
+		});
+			
+	});
+	$('#datetimepicker').datetimepicker();
+</script>

@@ -1,22 +1,12 @@
 <div class="container">
-								<div id="page-content-wrapper">
-					            <div class="container">
-					                <div class="row">
-					                    <div class="col-md-2" id = 'sidebarSwitch'>
-					                       	<a href="#menu-toggle" id="sideMenu">
-					                       		<i class = 'fa fa-cube' style = 'position: fixed; margin-top: 50px; font-size: 58px; color: #18bc9c;'></i>
-					                       	</a>
-					                    </div>
-					                </div>
-					            </div>
-					        </div>	 
+		 
 	<div class="row" style = 'margin-top: 150px;'>
 		<div class="col-m-8">
 				<ul class="nav nav-tabs nav-justified">
-					<li><a href="#hometab" data-toggle="tab">Broadcast</a></li>
+					<li><a href="#hometab" data-toggle="tab">Home</a></li>
 					<li class = 'active'><a href="#merchanttab" data-toggle="tab">Merchant</a></li>
-					<li><a href="#agenttab" data-toggle="tab">Compliance</a></li>
-					<li><a href="#indiaTab" data-toggle="tab">Alerts</a></li>
+					<li><a href="#agenttab" data-toggle="tab">Agents</a></li>
+					<li><a href="#indiaTab" data-toggle="tab">links</a></li>
 					<li><a href="#" data-toggle="tab">links</a></li>
 					<li class="dropdown">
 						<a href="" data-toggle="dropdown" class="dropdown-toggle">Currency
@@ -58,21 +48,7 @@
 											</thead>
 
 											<tbody>
-												<% for (var shj of shangjia) {%>
-													<tr>
-														<td class = 'pay'><%=shj.merchantName%></td>
-														<td><%=shj.mid %></td>
-														<td><%=shj.accountBalance %></td>
-														<td>
-															<a href="/merchants/<%=shj.slug %>" class = 'btn btn-md btn-primary'>
-																<span class = 'glyphicon glyphicon-zoom-in'></span></a>
-															<a href="/merchants/<%=shj.slug %>/edit" class = 'btn btn-md btn-warning'>
-																<span class = 'glyphicon glyphicon-wrench'></span></a>
-															<a href="/merchants/<%=shj.slug %>/delete" class = 'btn btn-md btn-danger'>
-																<span class = 'glyphicon glyphicon-trash'></span></a>
-														</td>
-													</tr>
-												<% } %>
+									  
 											</tbody>
 										</table>
 										<div class="row" style = 'float: left; clear: both;'>
@@ -83,7 +59,7 @@
 														        <span aria-hidden="true">&laquo;</span>
 														      </a>
 														    </li>
-														    <li><a href="/merchants/2">1</a></li>
+														    <li><a href="#123">1</a></li>
 														    <li><a href="#223">2</a></li>
 														    <li><a href="#323">3</a></li>
 														    <li><a href="#">4</a></li>
@@ -113,6 +89,7 @@
 				</div>
 </div>
 
+		<div class="container"><input type="text" id="datetimepicker" /></div>
 
 <div id = 'fstAlert' class="alert alert-danger collapse" style = 'width: 30%;'>
 	<a href="" class="close" id = 'linkClose'>&times;</a>
@@ -120,12 +97,8 @@
 	<strong>Error!</strong>Do not click this field.
 
 </div>
-
-			
-<script type = "text/javascript">
-
+<script type = 'text/javascript'>
 	$(document).ready(function(){
-
 		$('.pay').click(function(){
 			$('#fstAlert').show('fade');
 
@@ -137,19 +110,7 @@
 		$('#linkClose').click(function(){
 			$('#fstAlert').hide('fade');
 		});
-		
-
-		$('#datetimepicker').datetimepicker();
-
-		$("#sideMenu").click(function(e) {
-	        e.preventDefault();
-	        $("#wrapper").toggleClass("toggled");
-		});
-
-		var sw = $(window).width();
-		sw = parseInt(sw)*0.05; // alert('ln 191 sw = '+sw);
-		$('#sideMenu').css('left', sw+'px');
-		 
-
+			
 	});
+	$('#datetimepicker').datetimepicker();
 </script>
